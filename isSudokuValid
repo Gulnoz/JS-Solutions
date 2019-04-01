@@ -1,0 +1,94 @@
+//Function to get given row from nested array, returns array
+function getRow(puzzle, row){
+  let rowArray=[];
+  for(let i=0; i<puzzle[row].length;i++){
+    rowArray.push(puzzle[row][i]);
+  }
+  return rowArray;
+}
+
+//Function to get given column from nested array, returns array.
+function getColumn(puzzle, col){
+  let colArray=[];
+  for(let i=0; i<puzzle.length; i++)
+  {
+    colArray.push(puzzle[i][col]);
+  }
+  return colArray;
+}
+
+//Function to get given section(x,y) from nested array, returns array.
+function getSection(puzzle, x, y){
+  let sectionArray=[];
+  let col=x * 3;
+  let row=y * 3;
+  for(let i=row; i<row+3; i++){
+    for(let j=col; j<col+3; j++){
+      sectionArray.push(puzzle[i][j])
+    }
+  }
+  return sectionArray;
+}
+
+//Function returns true, if array includs numbers from 1 to 9.
+function includes1to9(secArray){
+  let bool = false;
+  let flag = 0;
+  for(let i=1; i<=9; i++){
+    if(secArray.includes(i))
+    {
+      flag++;
+    }
+    else{
+     flag--;
+    }
+  }
+    if(flag == 9){
+      bool = true;
+    }
+  return bool;
+}
+
+//Function returns true, if all numbers valid in Sudoku puzzle.
+function sudokuIsValid(puzzle){
+  let firstTrue=true;
+  let secondTrue=true;
+  let thirdTrue=true;
+  for(let i=0; i<puzzle.length; i++){
+    if(!includes1to9(getRow(puzzle,i))){
+      return false;
+    }
+    if(!includes1to9(getColumn(puzzle,i))){
+      return false;
+    }
+  }
+  for(let x=0; x<3; x++){
+    for(let y=0; y<3; y++){
+      if(!includes1to9(getSection(puzzle,y,x))){
+        return false;
+      }
+    }
+  }
+ 
+    return true;
+}
+
+//Function returns true, if two nested arrays are identical.
+function isSame(puzzle1, puzzle2){
+  if(puzzle1.length != puzzle2.length){
+    return false;
+  }
+  let flag;
+  let len=puzzle1.length;
+  for(let i=0; i<len; i++){
+    for(let j=0; j<len; j++){
+      if(getRow(puzzle1,i)[j] != getRow(puzzle2,i)[j]){ 
+        flag=true;
+      }
+    }
+  }
+  if(flag){
+    return false;
+  }
+  else return true;
+ }

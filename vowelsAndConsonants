@@ -1,0 +1,23 @@
+function isVowel(letter) {
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    if (vowels.includes(letter)) {
+        return true;
+    }
+}
+
+function vowelsAndConsonants(s) {
+    
+    for (let i = 0; i < s.length; i++){
+        let letter = s[i];
+        if (isVowel(letter)) {
+            console.log(letter);
+        }
+    }
+    for (let i = 0; i < s.length; i++) {
+        let letter = s[i];
+        if (!isVowel(letter)) {
+            console.log(letter);
+        }
+    }
+
+}

@@ -1,0 +1,14 @@
+//Write a function findLargestThreeDigitNum that, given a string of digits between 1 and 9, 
+//will return the largest three-digit number from the given string.
+
+function findLargestThreeDigitNum(digits) {
+    let arrThree = [];
+    let largest = digits.slice(0, 3);
+    for (let i = 3; i < digits.length - 2; i += 3) {
+        let elem = digits.slice(i, i + 3);
+        if (largest < elem) {
+            largest = elem;
+        }
+    }
+  return Number(largest);
+}

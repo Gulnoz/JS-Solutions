@@ -1,0 +1,17 @@
+//nestingBird
+//Write a function nestingBird that, given an array of characters and nested sub-arrays, 
+//concatenates the characters and returns the name of the bird in the nest.
+
+function nestingBird(chars) {
+    let str = '';
+    for (let i = 0; i < chars.length; i++){
+        let elem = chars[i];
+        if (typeof elem === 'string') {
+            str += elem;
+        }
+        else {
+            str += nestingBird(elem);
+        }
+    }
+    return str;
+}

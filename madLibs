@@ -1,0 +1,33 @@
+//Write a function madLibs that, given a string and an array of words, 
+//replaces the asterisks in the string with a word from the words array.
+
+//madLibs('My name is * and I am a *.', ['Sean', 'potato']);
+//// => 'My name is Sean and I am a potato.'
+//If there are more words in the words array than there are asterisks in the sentence,
+//that's ok! Just ignore the extra words.
+
+//madLibs('My name is * and I am a *.', ['Sean', 'potato', 'extra', 'words']);
+//// => 'My name is Sean and I am a potato.'
+//If there are fewer words in the words array than there are asterisks in the sentence, 
+//start replacing asterisks with words from the front of the array again.
+
+function madLibs(sentence, words) {
+    let count = 0;
+    let newStr = '';
+    
+    for (let i = 0; i < sentence.length; i++){
+        let elem = sentence[i];
+        if (elem === '*') {
+            if (count >= words.length) {
+                count = 0;
+            }
+            newStr += words[count];
+            count++;
+        }
+        else{
+            newStr += elem;
+        }
+    }
+    sentence = newStr;
+    return sentence;
+}

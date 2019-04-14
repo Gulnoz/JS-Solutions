@@ -1,19 +1,25 @@
 //Function to get given row from nested array, returns array
 function getRow(puzzle, row){
-    return puzzle[row];
+  return puzzle[row];
 }
 
 //Function to get given column from nested array, returns array.
 function getColumn(puzzle, col){
-  return puzzle[col];
+  let colArray=[];
+  for(let i=0; i<puzzle.length; i++)
+  {
+    colArray.push(puzzle[i][col]);
+  }
+  return colArray;
 }
 
 //Function to get given section(x,y) from nested array, returns array.
 function getSection(puzzle, x, y){
   let sectionArray=[];
-  let rowCol *= 3;
-  for (let i = row; i < rowCol+3; i++){
-    for (let j = col; j < rowCol+3; j++){
+  x *= 3;
+  y *= 3;
+  for (let i = row; i < x+3; i++){
+    for (let j = col; j < y+3; j++){
       sectionArray.push(puzzle[i][j])
     }
   }

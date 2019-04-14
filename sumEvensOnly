@@ -1,0 +1,17 @@
+//Write a function sumEvensOnly that, given a starting and ending number,
+//returns the sum of the range of numbers between the given starting and ending numbers.
+
+function sumEvensOnly(rangeStart, rangeEnd) {
+  let sum=0;
+  
+// We can use for-loop to get from rangeStart to rangeEnd
+  for (let i = rangeStart; i <= rangeEnd; i++){
+
+// we need to check is i even if yes add to sum i
+       if (i % 2 === 0) {
+            sum += i;
+        }
+        //if no we are going to the next i
+    }
+ return sum;
+}

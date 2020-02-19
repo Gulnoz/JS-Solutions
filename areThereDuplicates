@@ -1,0 +1,20 @@
+function areThereDuplicates(...args) {
+ //sort args
+  if(!args.length) return false;
+ args.sort((a,b)=> a > b)
+  //create variable toCompare with starts from index 1;
+  let start = 0
+  //Iterrate in array args to compare each element with toCompare
+  for(let i = 1; i < args.length; i++){
+      if(args[start] === args[i]){
+          return true;
+      }
+      start++;
+  }
+  //if element === toCompare return true
+  //else move to next, toCompare add 1;
+  //end loop
+  
+  return false;
+  
+}

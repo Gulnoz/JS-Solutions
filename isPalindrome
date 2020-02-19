@@ -1,0 +1,12 @@
+function isPalindrome(string){
+  // add whatever parameters you deem necessary - good luck!
+  let len = string.length
+  if(len === 0) return true;
+  if(string[0]!=string[len-1]) {
+      return false
+      
+  }
+  isPalindrome(string.substring(1,string[len-2]))
+  
+  return true;
+}

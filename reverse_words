@@ -1,0 +1,15 @@
+function reverse_words(array){
+
+//join array by " " then split again to make each element as word
+//array = array.join('').split(' ')
+
+//itterat in array take reverse current element with next one
+let len = array.length;
+for(let i = 0; i<Math.floor(len/2); i++){
+
+[array[i], array[len-1-i]] = [array[len-1-i], array[i]]
+
+
+}
+    return array
+}

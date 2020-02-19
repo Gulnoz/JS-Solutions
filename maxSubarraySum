@@ -1,0 +1,22 @@
+function maxSubarraySum(array, num){
+ //if data is not numbers return null
+  if(array.length < num) return null;
+  //Need maxSum variable
+  let maxSum = 0
+  //Iterate from first element to num to sum digits and save it to maxSum
+  for(let i = 0; i<num; i++){
+    maxSum+=array[i]
+  }
+  //Check next sum by substucting first and adding next digit to nexSum 
+   let nextSum = maxSum;
+  for(let i = 0; i<array.length; i++){
+    nextSum = nextSum-array[i]+array[i+num]
+    //Compare current maxSum with nextSum
+    //if nextSum > then current maxSum => update maxSum
+    if(nextSum > maxSum) {
+        maxSum = nextSum
+    }
+  }
+  //return the last maxSum
+  return maxSum
+}

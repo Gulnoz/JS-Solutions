@@ -1,0 +1,19 @@
+function countUniqueValues(sortedArray){
+  // add whatever parameters you deem necessary - good luck!
+  //Create pointer uniqIdx wich will point to the last uniq value
+  if(!sortedArray.length) return 0;
+  let uniqIdx = 0
+  //iterate each elemnet in sortedArray
+  //uniqIdx starts from index 0, 
+  for(let i = 1; i<sortedArray.length; i++){
+      let current = sortedArray[i];
+      
+//if value of uniqIdx != value of i uniqIdx++ and update the value of uniqIdx = value of i
+     if(sortedArray[uniqIdx]!=current) {
+         uniqIdx++;
+         sortedArray[uniqIdx]=current;
+     }
+  }
+   //return uniqIdx+1
+  return uniqIdx+1;
+ }

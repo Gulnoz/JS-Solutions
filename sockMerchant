@@ -1,0 +1,13 @@
+function sockMerchant(n, ar) {
+let obj1 = {}
+ar.forEach(sock=>{
+   obj1[sock] = (obj1[sock] || 0)+1
+})
+let objValues = Object.values(obj1);
+let totalPairs = 0;
+objValues.forEach(val=> {
+totalPairs += Math.trunc(val / 2)
+    })
+    return totalPairs;
+}
+

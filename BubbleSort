@@ -1,0 +1,27 @@
+function bubbleSort(array){
+
+ let counter = array.length;
+ let unsorted = true;
+
+ while(counter > 0 && unsorted){
+   
+    unsorted = false;
+    
+    for(let j = 0; j < counter-1; j++){
+    
+      if(array[j] > array[j+1]){
+     
+         [array[j], array[j+1]]=[array[j+1], array[j]]
+    
+         unsorted = true;
+    } 
+ }
+ 
+ counter--;
+ }
+ 
+ return array
+
+}
+
+//Big O complexity O(n^2)

@@ -1,0 +1,19 @@
+var searchBST = function(root, val) {
+   
+    if(!root) return null;
+    let current = root;
+    while(current){
+        if(current.val === val) return current;
+           if(current.val > val){
+            current = current.left;
+            if(current && current.val === val) return current;
+            
+        }
+        else{
+            current = current.right;
+            if (current && current.val === val) return current;
+        }
+    }
+    return null;
+};
+//Time complexity O(log n)

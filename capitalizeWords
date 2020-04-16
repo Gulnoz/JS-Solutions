@@ -1,0 +1,13 @@
+function capitalizeWords (words) {
+  if(words.length===0) return [];
+  let newArr=[];
+ 
+      let upper=words[0].toUpperCase();
+      newArr.push(upper);
+      newArr=[...newArr,...capitalizeWords(words.slice(1))]
+      return newArr
+  
+}
+
+// let words = ['i', 'am', 'learning', 'recursion'];
+// capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']

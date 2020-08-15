@@ -1,0 +1,11 @@
+function findNthFibonacciTerm(n) {
+	// Write your code here.
+  let dp=[]
+  //[1,1,]
+  dp[0]=0;
+  dp[1]=1;
+  dp[2]=1;
+ if(dp[n]!=undefined) return dp[n];
+   dp[n]=findNthFibonacciTerm(n-1)+findNthFibonacciTerm(n-2);
+  return dp[n];
+}
